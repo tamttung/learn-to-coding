@@ -1,0 +1,36 @@
+/*
+	Name: jungol2
+	Copyright: tamttung
+	Author: tamttung
+	Date: 18-10-21 14:56
+	Description: jungol coder2
+*/
+
+//jungol_code 512
+int main(void)
+{
+	int n1;
+	float n2;
+	
+	n1 = 49;
+	n2 = 0.2683;
+	
+	printf("%d * %f = %f\n", n1, n2, n1*n2);
+	
+	return 0;
+}
+
+//jungol_code 510
+int main(void)
+{
+	int n1, n2;
+	
+	n1 = -1;
+	n2 = 100;
+	
+	printf("%d\n%d",n1,n2);
+	
+	return 0;
+}
+
+
