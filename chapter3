@@ -5,7 +5,7 @@
 	Copyright: tamttung
 	Author: tamttung
 	Date: 19-10-21 10:42
-	Description: 변수
+	Description: CHAPER 3
 */
  
 
@@ -43,3 +43,20 @@ int main(void)
  	
  	return 0;
  }
+ 
+ #include<stdio.h>
+
+#define PI (3.14)
+
+int main(void)
+{
+	double r, area;
+	const double pi = 3.14;
+	
+	scanf("%lf", &r);
+	
+	area = pi*r*r;
+	printf("Area of circle : %.2lf\n", area);
+	
+	return 0;
+}
