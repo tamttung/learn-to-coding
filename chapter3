@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+/*
+	Name: day3 
+	Copyright: tamttung
+	Author: tamttung
+	Date: 19-10-21 10:42
+	Description: CHAPER 3
+*/
+ 
+
+
+int main(void) 
+{
+	int amount;
+	int price=1000;
+	
+	printf("수량 : %d, 가격 : %d \n", amount,price);
+	amount = 400;
+	price = 2000;
+	printf("수량 : %d, 가격 : %d\n", amount,price); 
+	 
+	return 0;
+}
+
+
+
+#include<stdio.h>
+
+#define MAX 100
+
+int main(void)
+{
+	int num1 = MAX;
+	int num2 = MAX -1;
+	int num3 = -MAX;
+	
+	printf("num1 = %d\n", num1);
+	printf("num2 = %d\n", num2);
+	printf("num3 = %d\n", num3);
+	
+ 	printf("MAX = %d\n",MAX);
+ 	
+ 	return 0;
+ }
+ 
+ #include<stdio.h>
+
+#define PI (3.14)
+
+int main(void)
+{
+	double r, area;
+	const double pi = 3.14;
+	
+	scanf("%lf", &r);
+	
+	area = pi*r*r;
+	printf("Area of circle : %.2lf\n", area);
+	
+	return 0;
+}
