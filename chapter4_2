@@ -99,4 +99,49 @@ int main(void)
 	return 0 ;
 }
 
+ //chapter4_6 대입연산자
+
+#include<stdio.h>
+
+int main(void)
+{
+	int num;
+	
+	num = 5;
+	printf("num = %d\n",num); 
+	
+	num+=2;
+	printf("num = %d\n",num);
+	
+	num*=2;
+	printf("num = %d\n",num);
+	
+	num|=3;
+	printf("num = %d\n",num);
+	
+	num<<=2;
+	printf("num = %d\n",num);
+	
+	return 0;
+}
+
+//chapter4_7 조건 연산자
  
+#include<stdio.h>
+
+int main(void)
+{
+	int a,b;
+	int min,max;
+	
+	printf("두 개의 정수를 입력하세요 : ");
+	scanf("%d %d", &a,&b);
+	
+	min = a < b ? a : b;
+	max = a > b ? a : b;
+	
+	printf("min = %d, max = %d\n", min,max);
+	
+	return 0;
+}
+
