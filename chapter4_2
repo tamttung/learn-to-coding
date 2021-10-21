@@ -74,5 +74,29 @@ int main(void)
 	return 0;
 }
  
+//chapter4_5 비트연산자
+
+#include<stdio.h>
+
+int main(void)
+{
+	int a = 10; //0x0a
+	int b = 12;
+	int c;
+	
+	c = a & b;
+	printf("a & b = 0x%08x(%d)\n",c,c);
+	
+	c = a | b;
+	printf("a | b = 0x%08x(%d)\n",c,c);
+	
+	c = a ^ b;
+	printf("a ^ b = 0x%08x(%d)\n",c,c);
+	
+	c = ~a;
+	printf("~a = 0x%08x(%d)\n",c,c);
+	
+	return 0 ;
+}
 
  
