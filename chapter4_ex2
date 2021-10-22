@@ -1,0 +1,16 @@
+//chapter4_ex2
+
+#include<stdio.h>
+
+int main()
+{
+	double a, inch_to_cm;
+		
+	printf("inch를 입력하세요 : ");
+	scanf("%lf",&a);
+	
+	inch_to_cm = 2.54*a;
+	printf("%.2lf inch = %.2lf cm",a,inch_to_cm);
+	
+	return 0;
+}
