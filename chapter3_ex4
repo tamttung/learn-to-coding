@@ -4,11 +4,16 @@
 
 int main(void)
 {
-	int a=97,m=109,x=120;
+	char ascii_code;
+
+	ascii_code = 'a';
+	printf("%c : 10진수=%3d, 16진수=%3x\n",ascii_code,ascii_code,ascii_code);
 	
-	printf("a : 10진수=%d, 16진수=%x\n",a,a);
-	printf("m : 10진수=%d, 16진수=%x\n",m,m);
-	printf("x : 10진수=%d, 16진수=%x\n",x,x);
+	ascii_code = 'm';
+	printf("%c : 10진수=%3d, 16진수=%3x\n",ascii_code,ascii_code,ascii_code);
+	
+	ascii_code = 'x';
+	printf("%c : 10진수=%3d, 16진수=%3x\n",ascii_code,ascii_code,ascii_code);
 	
 	return 0;
 }
