@@ -1,0 +1,14 @@
+//chapter3_ex4
+
+#include<stdio.h>
+
+int main(void)
+{
+	int a=97,m=109,x=120;
+	
+	printf("a : 10진수=%d, 16진수=%x\n",a,a);
+	printf("m : 10진수=%d, 16진수=%x\n",m,m);
+	printf("x : 10진수=%d, 16진수=%x\n",x,x);
+	
+	return 0;
+}
