@@ -1,0 +1,19 @@
+//chapter4_ex3
+
+#include<stdio.h>
+
+int main()
+{
+	int a,b,hour,min,sec;
+	
+	printf("시간을 입력하세요(초) : ");
+	scanf("%d",&a);
+
+	hour= a/3600;
+	b=a%3600;
+	min=b/60;
+	sec=a%60;
+	printf("%d시간 %d분 %d초 입니다.",hour,min,sec);
+	
+	return 0;
+}
