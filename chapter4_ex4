@@ -1,0 +1,22 @@
+//chapter4_ex4
+//인터넷 검색해서 if함수 써버 림  ㅜ
+ 
+#include<stdio.h>
+
+int main()
+{
+	int a,b;
+	
+	printf("연도를 입력하세요: ");
+	scanf("%d",&a);
+	
+	b=(a%4==0)&&!(a%100==0)||(a%400==0);
+	
+	if(b==1)
+		printf("%d년은 윤년입니다.\n",a);
+	else 
+		printf("%d년은 윤년이 아닙니다.\n",a);
+	
+	return 0;
+}
+	  
