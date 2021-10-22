@@ -1,0 +1,19 @@
+//jungol_code104
+
+#include<stdio.h>
+
+int main()
+{
+	int sum, avg;
+	sum = 90 + 80 + 100;
+	avg = (90 + 80 + 100)/3;
+	
+	printf("kor 90\n"
+			"mat 80\n"
+			"eng 100\n");
+	printf("sum %d\n",sum);
+	printf("avg %d\n",avg);
+	
+	return 0;
+}
+	
