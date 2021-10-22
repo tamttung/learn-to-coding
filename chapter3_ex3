@@ -11,12 +11,17 @@
 
 int main(void)
 {
-	int a=CHAR_MAX,b=CHAR_MIN;
+	char ch;
 	
-	printf("char 형의 최대값 : %d\n",a);
-	printf("char 형의 최대값+1 : %d\n",a+1);
-	printf("char 형의 최소값 : %d\n",b);
-	printf("char 형의 최소값-1 : %d\n",b-1);
+	ch = SCHAR_MAX;
+	
+	printf("char 형의 최대값 : %d\n",ch);
+	printf("char 형의 최대값+1 : %d\n",ch+=1);
+	
+	ch = SCHAR_MIN;
+	
+	printf("char 형의 최소값 : %d\n",ch);
+	printf("char 형의 최소값-1 : %d\n",ch-=1);
 			
 	return 0;
 }
