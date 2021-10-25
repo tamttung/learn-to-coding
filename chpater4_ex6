@@ -1,0 +1,15 @@
+//chpater4_ex6
+
+#include<stdio.h>
+
+int main()
+{
+	double a,b;
+	
+	printf("면적을 입력하세요: ");
+	scanf("%lf",&a);
+	
+	b= a*3.3058;
+	printf("%.0lf m^2 = %.5lf 평 입니다. ",a,b);  
+	return 0;
+}
