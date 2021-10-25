@@ -1,0 +1,22 @@
+/*
+	Name: chapter4_ex1-2
+	Copyright: tamttung
+	Date: 25-10-21 09:09
+	Description: chapter4_ex1-2  
+*/
+
+#include<stdio.h> 
+
+int main()
+{
+	int x = 0x7a, y= 0x1c;
+	int z;
+	
+	z= (x&y)<<2;
+	printf("z=%x\n",z);
+	
+	z=(x&~y)>>2;
+	printf("z=%x\n",z);
+
+	return 0;
+}
