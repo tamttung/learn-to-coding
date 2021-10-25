@@ -1,0 +1,17 @@
+//chapter4_ex4-1
+
+#include<stdio.h>
+
+int main()
+{
+	int a,b;
+	printf("input years : ");
+	scanf("%d",&a);
+	
+	b = (a%4==0)&&!(a%100==0)||(a%400==0);
+	
+	b?printf("%d년은  윤년입니다.",a):printf("%d년은  윤년이 아닙니다.",a);
+	
+	return 0;
+}
+	
