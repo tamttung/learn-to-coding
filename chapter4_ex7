@@ -5,19 +5,20 @@
 int main ()
 {
 	int a,b,c;
-	int sum,avg,max,min;
+	int sum,max,min;
+	float avg;
 	
 	printf("정수 3개를 입력하세요 : ");
 	scanf("%d %d %d",&a,&b,&c);
 	
 	sum = a+b+c;
-	avg = (a+b+c)/3;
+	avg = (a+b+c)/3.0;
 	max = a>b&&a>c?a:(b>c?b:c);
 	min = a<b&&a<c?a:(b<c?b:c);			
 		  	  
 	
 	printf("sum = %d\n"
-		   "avg = %d\n"
+		   "avg = %.2f\n"
 		   "max = %d\n"
 		   "min = %d\n"	,sum,avg,max,min);
 	
