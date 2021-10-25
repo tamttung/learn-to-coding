@@ -21,3 +21,34 @@ int main()
 	
 	return 0;	
 }
+
+//chapter4_ex5-1
+
+#include<stdio.h>
+#define EXPONENT 5
+
+int main()
+{
+	int value=1;
+	
+//	value = value<<EXPONENT		
+	value <<= EXPONENT;
+	printf("5th power of 2: %d\n",value); 
+	
+	value <<= EXPONENT;
+	printf("10th power of 2: %d\n",value); 
+	
+	value <<= EXPONENT;
+	printf("15th power of 2: %d\n",value); 
+	
+	value <<= EXPONENT;
+	printf("20th power of 2: %d\n",value); 
+	
+	value <<= EXPONENT;
+	printf("25th power of 2: %d\n",value); 
+	
+	value <<= EXPONENT;
+	printf("30th power of 2: %d\n",value); 
+	
+	return 0;
+}
