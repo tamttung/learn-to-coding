@@ -4,13 +4,13 @@
 
 int main()
 {
-	double a, inch_to_cm;
+	double a, cm_per_inch;
 		
 	printf("inch를 입력하세요 : ");
 	scanf("%lf",&a);
 	
 	inch_to_cm = 2.54*a;
-	printf("%.2lf inch = %.2lf cm",a,inch_to_cm);
+	printf("%.2lf inch = %.2lf cm",a,cm_per_inch);
 	
 	return 0;
 }
