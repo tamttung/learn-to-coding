@@ -1,0 +1,30 @@
+//chapter5_3
+
+#include<stdio.h>
+
+int main()
+{
+	int a;
+	
+	printf("============\n" 
+			"1.짜장면\n"
+			"2.울면\n"
+			"3.짬뽕\n"
+			"4.볶음밥\n"
+			"============\n"
+			"메뉴의 번호를 입력하세요: ");
+	scanf("%d",&a);
+	
+	if(a==1)
+		printf("짜장면\n");
+	else if	(a==2)	
+		printf("울면\n"); 
+	else if	(a==3)	
+		printf("짬뽕\n");
+	else if	(a==4)	
+		printf("볶음밥\n");
+	else 	
+		printf("그런 메뉴는 없어요\n");
+	
+	return 0;
+}
