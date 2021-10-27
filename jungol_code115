@@ -1,0 +1,16 @@
+//jungol_code115
+
+#include<stdio.h>
+
+int main()
+{
+	int minsu_tall,minsu_weight;
+	int kiyoung_tall,kiyoung_weight;
+	
+	scanf("%d %d",&minsu_tall,&minsu_weight);
+	scanf("%d %d",&kiyoung_tall,&kiyoung_weight);
+	
+	printf("%d",minsu_tall>kiyoung_tall&&minsu_weight>kiyoung_weight);
+	
+	return 0;
+}
