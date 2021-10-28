@@ -1,0 +1,58 @@
+//chapter5_ex4
+
+#include<stdio.h>
+
+int main()
+{
+	int a; 
+	printf("1.메뉴\n");
+	printf("2.메뉴\n");
+	printf("3.메뉴\n");
+	printf(">>>선택 : ");
+	scanf(" %d",&a);
+	
+	if(a==1)
+	{
+		printf("메뉴%d번이 선택되었습니다",a);
+		} 
+	else if(a==2)
+	{
+		printf("메뉴%d번이 선택되었습니다",a);
+		} 
+	else if(a==3)
+	{
+		printf("메뉴%d번이 선택되었습니다",a);
+		} 
+	 else 
+	  printf("error");
+	  
+	return 0;
+}
+
+//chapter5_ex4-1
+
+#include<stdio.h>
+
+int main()
+{
+	int a; 
+	printf("1.메뉴\n");
+	printf("2.메뉴\n");
+	printf("3.메뉴\n");
+	printf(">>>선택 : ");
+	scanf(" %d",&a);
+	
+	switch(a)
+	{
+		case 1:
+			printf("메뉴 1이 선택되었습니다.\n"); 
+		case 2:
+			printf("메뉴 2이 선택되었습니다.\n"); 
+		case 3:
+			printf("메뉴 3이 선택되었습니다.\n"); 
+		default:
+			printf("1~3사의의 메뉴를 입력하세요.\n");
+		break;
+	}
+	return 0;
+}
