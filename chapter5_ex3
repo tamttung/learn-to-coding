@@ -1,0 +1,26 @@
+//chapter5_ex3
+
+#include<stdio.h>
+
+int main()
+{
+	int num;
+	
+	printf("input number : ");
+	scanf(" %d",&num); 
+	
+	switch(num%2)
+	{
+		case 0:
+			num==0?	
+			printf("%d는 짝수도 홀수도 아닙니다\n",num):
+			printf("%d는 짝수입니다.\n",num);
+			break;
+		case 1:
+			printf("%d는 홀수입니다.\n",num);
+			break;
+	
+	}
+	return 0;
+}
+		 
