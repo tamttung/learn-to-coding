@@ -1,0 +1,26 @@
+//chapter5_ex9
+
+#include<stdio.h>
+
+int main()
+{
+	int n,fac=1,i,curNum;
+	
+	printf("정수를 입력하세요 : ");
+	scanf("%d",&n);
+
+	for(curNum=0;curNum<=n;curNum++)
+	{	
+		if(curNum==0)
+		{
+			fac=1;
+		}
+		else
+		{
+			for(fac=1,i=1;i<=curNum;i++)
+				fac=fac*i;
+		}
+	printf("%d! = %d\n",curNum,fac);
+	}
+}
+	
