@@ -1,0 +1,33 @@
+//chapter5_ex7
+
+#include<stdio.h>
+
+int main()
+{
+	int a;
+	char ch;
+	
+	do {
+		printf("정수를 입력하세요 : ");
+		scanf("%d",&a);	
+		
+		if (a==0)
+		{
+			printf("%d는 짝수도 홀수도 아닙니다.\n",a);
+		}
+		else if (a%2==1)
+		{
+			printf("%d는 홀수 입니다.\n",a);
+		}
+		else 
+		{ 
+			printf("%d는 짝수 입니다.\n",a);
+		}
+	
+		printf("계속하시겠습니까? (Y/N)");
+		scanf(" %c", &ch);
+		
+	} while(ch=='Y'||ch=='y');
+	
+	return 0;
+}
