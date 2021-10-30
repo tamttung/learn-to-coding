@@ -1,0 +1,18 @@
+//jungol_code530
+
+#include<stdio.h>
+
+int main()
+{
+	int a;
+	
+	scanf("%d",&a);
+	
+	if(a<=20)
+	{
+		printf("%d years later\n",20-a);
+	}
+	else 
+	{	printf("adult");}
+	return 0;
+}
