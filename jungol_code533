@@ -1,0 +1,35 @@
+//jungol_code533
+
+#include<stdio.h>
+
+int main()
+{
+	int a;
+	char ch;
+	
+	scanf("%c %d",&ch,&a);
+	
+	if (ch=='M')
+	{
+		if(a>=18)
+		{
+			printf("MAN");
+		}
+		else
+		{
+			printf("BOY");
+		}
+	}
+	else if(ch=='F')
+	{
+		if(a>=18)
+		{
+			printf("WOMAN");
+		}
+		else
+		{
+			printf("GIRL");
+		}
+	}
+	return 0;
+}
