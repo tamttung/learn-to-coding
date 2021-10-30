@@ -1,0 +1,21 @@
+//jungol_code529
+
+#include<stdio.h>
+
+int main()
+{
+	int tall,wieght,obesity;
+	
+	scanf("%d %d",&tall,&wieght);
+	
+	obesity = (wieght+100-tall);
+	
+	printf("%d\n",obesity);
+	
+	if(obesity>0)
+	{
+		printf("Obesity\n");
+	}
+	return 0;
+}
+
