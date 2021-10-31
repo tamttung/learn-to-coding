@@ -1,0 +1,24 @@
+//jungol_code129
+
+#include<stdio.h>
+
+int main()
+{
+	int a,b;
+	char ch;
+	
+	while(1)
+	{
+		printf("Base = ");
+		scanf("%d",&a);
+		printf("Height = ");
+		scanf("%d",&b);
+		printf("Triangle width = %.1f\n",a*b/(float)2);
+		printf("Continue? ");
+		scanf(" %c",&ch);
+		
+		if(ch!='Y'&&ch!='y')
+		break;
+	}
+	return 0;
+}
