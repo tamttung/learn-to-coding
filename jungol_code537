@@ -1,0 +1,24 @@
+//jungol_code537
+
+#include<stdio.h>
+
+int main()
+{
+	int a,i;
+	int sum;
+	
+	
+	scanf("%d",&a);
+	
+	i=1;
+	sum=0;
+	while(i<=a)
+	{
+		sum+=i;
+		i++;
+	}
+	
+	printf("%d",sum);
+	
+	return 0;
+}
