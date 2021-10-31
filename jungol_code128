@@ -1,0 +1,20 @@
+//jungol_code128
+
+#include<stdio.h>
+
+int main()
+{
+	int a,i=0;
+	
+	while(1)
+	{
+		scanf("%d",&a);
+		
+		if(a==0)
+		break;
+		else if(a%3!=0&&a%5!=0)
+		i++;
+	}
+	printf("%d",i);
+	
+}
