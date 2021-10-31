@@ -1,0 +1,47 @@
+//jungol_code633
+
+#include<stdio.h>
+
+int main()
+{
+	int a;
+	int flag = 0;
+	
+	while(1)
+	{
+
+		printf("1. Korea\n");
+		printf("2. USA\n");
+		printf("3. Japan\n");
+		printf("4. China\n");
+		printf("number? ");
+		scanf("%d",&a);
+			
+		switch(a)
+		{
+			case 1:
+				printf("\nSeoul\n");
+			break;	 
+			case 2:
+				printf("\nWashington\n");
+			break;	 
+			case 3:
+				printf("\nTokyo\n");
+			break;	 
+			case 4:
+				printf("\nBeijing\n");
+			break;	 
+			default:
+				printf("\nnone\n");
+				flag =1;
+			break;
+		}
+	if(flag==1)
+	break;
+	printf("\n");
+	
+	}
+	
+	return 0;
+}
+			
