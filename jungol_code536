@@ -1,0 +1,14 @@
+//jungol_code536
+
+#include<stdio.h>
+
+int main()
+{
+	int a;
+	
+	a=1;
+	while(a<=15)
+		printf("%d\n",a++);
+		
+	return 0;
+}
