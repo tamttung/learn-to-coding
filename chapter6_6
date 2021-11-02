@@ -1,0 +1,27 @@
+//chapter6_6
+
+#include<stdio.h>
+
+void Swap(int a,int b);
+
+int main(void)
+{
+	int a=10;
+	int b=20;
+	
+	printf("a=%d,b=%d\n",a,b);
+	Swap(a,b);
+	printf("a=%d,b=%d\n",a,b);
+	
+	return 0;
+}
+
+void Swap(int a, int b)
+{
+	int temp;
+	
+	temp=a;
+	a=b;
+	b=temp;
+
+}
