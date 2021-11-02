@@ -1,0 +1,54 @@
+//chapter6_ex1
+
+#include<stdio.h>
+
+int GetRGB(int r,int g, int b);
+int GetRGB_Red(int r);
+int GetRGB_Green(int g);
+int GetRGB_Blue(int b);
+
+int main(void)
+{
+	unsigned int r,g,b,rgb;
+	
+	printf("red를 입력하세요(0~255): ");
+	scanf("%d",&r); 
+	
+	printf("green를 입력하세요(0~255): ");
+	scanf("%d",&g); 
+	
+	printf("blue를 입력하세요(0~255): ");
+	scanf("%d",&b);
+	
+	rgb = GetRGB(r,g,b);
+	printf("RGB 값: #%06X\n\n",rgb);
+	
+	printf("RGB값을 16진수로 입력하세요 : ");
+	scanf("%x",&rgb);
+	
+	printf("RGB값 %06x 중 red : %3d\n",rgb,GetRGB_Red(rgb));
+	printf("RGB값 %06x 중 green : %3d\n",rgb,GetRGB_Green(rgb));
+	printf("RGB값 %06x 중 blue : %3d\n",rgb,GetRGB_Blue(rgb));
+	
+	return 0;
+}
+
+int GetRGB(int r, int g, int b)
+{
+	return (r|(g<<8)|(b<<16));
+}
+
+int GetRGB_Red(int rgb)
+{
+	return (rgb&0x0000ff);
+}
+
+int GetRGB_Green(int rgb)
+{
+	return (rgb&0x00ff00)>>8;
+}
+
+int GetRGB_Blue(int rgb)
+{
+	return (rgb&0xff0000)>>16;
+}
