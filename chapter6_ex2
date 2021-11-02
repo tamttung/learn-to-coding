@@ -1,0 +1,25 @@
+//chapter6_ex2
+
+#include<stdio.h>
+
+double Absolute(double);
+
+int main()
+{
+	double a;
+	scanf("%lf",&a);
+	
+	Absolute(a);
+	
+	return 0;
+}
+
+double Absolute(double x)
+{
+	if (x<0)
+		printf("%.2lf",-x);
+	else
+		printf("%.2lf",x);
+		
+	return 1;
+}
