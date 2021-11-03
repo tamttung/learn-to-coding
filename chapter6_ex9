@@ -1,0 +1,63 @@
+//chapter6_ex9
+
+#include<stdio.h>
+
+int GetRectWidth(int,int);
+int GetRectHeight(int,int);
+int GetRectArea(int,int);
+int GetRectPerimeter(int,int);
+
+int main(void)
+{
+	int x1,x2,y1,y2;
+	int x,y;
+		
+	printf("point 1 : ");
+	scanf("%d %d",&x1,&y1);
+	printf("point 2 : ");
+	scanf("%d %d",&x2,&y2);
+	
+	x=GetRectWidth(x1,x2);
+	y=GetRectHeight(y1,y2);
+	
+	printf("width : %d\n",GetRectWidth(x1,x2));
+	printf("height : %d\n",GetRectHeight(y1,y2));
+	printf("area : %d\n",GetRectArea(x,y));
+	printf("perimeter : %d\n",GetRectPerimeter(x,y));
+	
+	return 0;
+}
+
+int GetRectWidth(int x1,int x2)
+{
+	int x;
+	if(x1>x2)
+		x=x1-x2;
+	else
+		x=x2-x1; 
+	return x;
+}
+
+int GetRectHeight(int y1,int y2)
+{	
+	int y;
+	if(y1>y2)
+		y=y1-y2;
+	else
+		y=y2-y1;
+	return y;
+}
+
+int GetRectArea(int x,int y)
+{
+	return x*y;
+}
+
+int GetRectPerimeter(int x,int y)
+{
+	return 2*(x+y);
+}
+
+
+
+
