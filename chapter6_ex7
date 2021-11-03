@@ -1,0 +1,33 @@
+//chapter6_ex7
+
+#include<stdio.h>
+
+int IsLower(char);
+int IsUpper(char);
+int IsAlphabetic(char);
+
+int main(void)
+{	
+	char ch;
+	
+	while(1){
+		scanf(" %c",&ch);
+		printf("%d %d %d\n",IsLower(ch),IsUpper(ch),IsAlphabetic(ch));
+	}
+}
+
+int IsLower(char ch)
+{
+	return ('a'<=ch&&'z'>=ch);
+}
+int IsUpper(char ch)
+{
+	return ('A'<=ch&&'Z'>=ch);
+}
+
+int IsAlphabetic(char ch)
+{
+	return IsLower(ch)||IsUpper(ch);
+}
+
+	
