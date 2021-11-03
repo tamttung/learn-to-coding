@@ -1,0 +1,44 @@
+//chapter6_ex5
+
+#include<stdio.h>
+
+int IsLeapYear(int);
+int GetDaysOfMonth(int);
+
+int main(void){
+	
+	int year,month;
+	
+	while(1){
+		printf("Input year : ");
+		scanf("%d",&year);
+		printf("Input month : ");
+		scanf("%d",&month);
+		
+		if(month==2)
+		{	IsLeapYear(year)?printf("day : 29\n"):printf("day : 28\n");}
+		else
+		{	printf("day : %d\n",GetDaysOfMonth(month)); }
+	
+	}
+
+	return 0;
+}
+
+int IsLeapYear(int y)
+{
+	return (y%4==0&&y%100!=0||y%400==0);
+}
+	
+int GetDaysOfMonth(int m)
+{
+	int d;
+	if(m==1||m==3||m==5||m==7||m==8||m==10||m==12)
+	{	d=31;	}
+	else if(m==4||m==6||m==9||m==11)
+	{	d=30;	}
+	
+	return d;
+		
+}
+	
