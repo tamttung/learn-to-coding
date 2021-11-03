@@ -1,0 +1,22 @@
+//chapter6_ex4
+
+#include<stdio.h>
+
+int IsLeapYear(int);
+
+int main(void)
+{
+	int year;
+	
+	while(1){
+	scanf("%d",&year);
+	printf("%d\n",IsLeapYear(year));
+}
+	return 0;
+}
+
+int IsLeapYear(int a)
+{
+	return (a%4==0&&a%100!=0||a%400==0);
+}
+	
