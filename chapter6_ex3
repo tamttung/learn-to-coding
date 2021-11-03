@@ -1,0 +1,27 @@
+//chapter6_ex3
+
+#include<stdio.h>
+
+double Round(double);
+
+int main()
+{
+	double a;
+	
+	while(1)
+	{
+		
+	scanf("%lf",&a);	
+	printf("%.0lf\n",Round(a));
+}
+	return 0;
+	
+}
+
+double Round(double x){
+	if(x>=0)
+		return (int)(x+0.5);
+	else
+		return (int)(x-0.5);
+}
+	
