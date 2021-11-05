@@ -1,0 +1,17 @@
+//chapter7_9
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	char str[20]="abcde";
+	
+	strcat(str,"12345");
+	
+	printf("str=%s\n",str);
+	printf("%d\n",sizeof(str));
+	printf("%d\n",strlen(str));
+	
+	return 0;
+}
