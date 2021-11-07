@@ -1,0 +1,25 @@
+//jungol_code134
+
+#include<stdio.h>
+
+int main()
+{
+	int i=0,count_odd=0,count_even=0;
+	int n;
+	
+	while(1){
+		scanf("%d",&n);
+		i++;
+		if(n%2==0)
+			count_even++;
+		else
+			count_odd++;
+		if(i==10)
+		break;
+	}
+	
+	printf("even : %d\n",count_even);
+	printf("odd : %d\n",count_odd);
+	
+	return 0;
+}
