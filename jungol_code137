@@ -1,0 +1,18 @@
+//jungol_code137
+
+#include<stdio.h>
+
+int main()
+{
+	int a,b,i,j,s;
+	scanf("%d %d",&a,&b);
+	
+	for(i=1;i<=a;i++){
+		for(j=1;j<=b;j++){
+			s=i*j;
+			printf("%d ",s);
+		}
+	printf("\n");	
+	}
+	return 0;
+}
