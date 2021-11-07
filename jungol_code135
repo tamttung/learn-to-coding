@@ -1,0 +1,28 @@
+//jungol_code135
+
+#include<stdio.h>
+
+int main()
+{
+	int a,b,sum=0,i;
+	float avg;
+	scanf("%d %d",&a,&b);
+	
+	if(a>b){
+		int tmp = a;
+		a=b;
+		b=tmp;
+	}
+	for(i=0;a<=b;a++){
+			if(a%3==0||a%5==0){
+			sum+=a;
+			i++;
+		}
+	}
+	
+	
+	printf("sum : %d\n",sum);
+	printf("avg : %.1f\n",sum/(float)i);
+	
+	return 0;
+}
