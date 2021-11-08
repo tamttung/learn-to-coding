@@ -1,0 +1,26 @@
+//chapter7_ex2
+
+#include<stdio.h>
+
+int main()
+{
+	int a,i;
+	int count_minus=0,count_plus=0,count_zero=0;
+	
+	for(i=1;i<=10;i++){
+		scanf("%d",&a);
+		if(a==0)
+		count_zero++;
+		else if(a>0)
+		count_plus++;
+		else
+		count_minus++;
+	}
+	
+	printf("zero : %d\n",count_zero);
+	printf("plus : %d\n",count_plus);
+	printf("minus : %d\n",count_minus);
+	
+	return 0;
+}
+	
