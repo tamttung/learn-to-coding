@@ -1,0 +1,44 @@
+//chapter7_ex2-1
+
+#include<stdio.h>
+#define SIZE 10
+
+int main()
+{
+	int arr[SIZE];
+	int i;
+	int zeroCount,plusCount,minusCount;
+	
+	zeroCount=plusCount=minusCount=0;
+	
+	printf("Enter 10 number : ");
+	
+	for(i=0;i<SIZE;i++){
+		scanf("%d",&arr[i]);
+	}
+	
+	for(i=0;i<SIZE;i++){
+		if(arr[i] ==0){
+			zeroCount++;
+			}
+		else if(arr[i]>0){
+			plusCount++;
+		}
+		else{
+			minusCount++;
+		}
+	}
+	
+	printf("Zero : %d\n",zeroCount);
+	printf("Plus : %d\n",plusCount);
+	printf("Minus : %d\n",minusCount);
+	
+	return 0;
+}
+	
+		
+			
+			
+	
+	
+	
