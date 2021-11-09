@@ -1,0 +1,33 @@
+//chapter7_ex8
+
+#include<stdio.h>
+#include<string.h>
+#define SIZE 50
+
+int main()
+{
+	char str[SIZE]={0,};
+	int i=0;
+	
+	printf("문자열을 입력하세요 : "); 
+	gets(str);
+	
+	while(str[i] !='0'){
+		if(i==0){
+			if('a'<=str[i]&&str[i]<='z'){
+				str[i]-='a'-'A';
+			}
+		}
+		else if(str[i]==' '||str[i]=='\t'||str[i]=='\n'||str[i]=='\r'){
+			if('a'<=str[i+1]&&str[i+1]<='z')
+				str[i+1]-='a'-'A';
+			}
+		
+		i++;
+	}
+		
+		
+	printf("변경후 문자열 : %s",str);
+	
+	return 0;
+}
