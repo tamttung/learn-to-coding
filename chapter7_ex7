@@ -1,0 +1,45 @@
+//chapter7_ex7
+
+#include<stdio.h>
+#include<math.h>
+
+#define SIZE 10
+int main()
+{
+	double arr[SIZE];
+	double vari[SIZE];
+	double sum=0,avg=0,variance=0,SD;
+	int i;
+	
+	for(i=0;i<SIZE;i++){
+		scanf("%lf",&arr[i]);
+	}
+	
+	for(i=0;i<SIZE;i++){
+		sum += arr[i] ;
+	}
+	
+	avg=sum/SIZE;
+	
+	for(i=0;i<SIZE;i++){
+		vari[i] = avg - arr[i];
+	}
+	
+	for(i=0;i<SIZE;i++){
+		variance += (vari[i]*vari[i])/SIZE;
+	}
+	
+	SD=sqrt(variance);
+	
+	printf("%.2lf\n",variance);
+	printf("%.2lf\n",SD);
+	
+	return 0;
+}
+	
+	
+	
+	
+	
+	
+	
