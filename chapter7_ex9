@@ -1,0 +1,31 @@
+//chapter7_ex9
+
+#include<stdio.h>
+#define SIZE 30
+int main()
+{
+	char str[SIZE];
+	int i,j;
+	char ch;
+	
+	gets(str);
+	
+	i=0;
+	while(str[i]!='\0'){
+		ch=str[i];
+		if(ch==' '||ch=='\t'||ch=='\n'||\
+		   ch=='\f'||ch=='\r'||ch=='\v'){
+		   	j=i;
+		   	while(str[j]!='\0'){
+		   		str[j]=str[j+1];
+		   		j++;
+		   	}
+		}
+		else
+			i++;
+	}
+		
+	printf("%s",str);
+	
+	return 0;
+}
