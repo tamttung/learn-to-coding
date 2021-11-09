@@ -1,0 +1,28 @@
+//chapter7_ex10
+
+#include<stdio.h>
+#define SIZE 10
+int main()
+{
+	int arr[SIZE]={0,100,200,300,400,500,600,700,800,900};
+	int i,firstfoundindex;
+	int searchvalue;
+	
+	printf("input search value : ");
+	scanf("%d",&searchvalue);
+	
+	for(i=0;i<SIZE;i++){
+		if(arr[i]==searchvalue){
+			firstfoundindex=i;
+			break;
+		}
+	}
+	
+	if(i == SIZE){
+		printf("error\n");
+	}
+	else{
+		printf("value index : %d\n",firstfoundindex);
+	}
+	return 0;
+}
