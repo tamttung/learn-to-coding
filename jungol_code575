@@ -1,0 +1,22 @@
+//jungol_code575
+
+#include<stdio.h>
+
+int Power(int,int);
+
+int main(void)
+{
+	int x,y;
+	scanf("%d %d",&x,&y);
+	
+	printf("%d\n",Power(x,y));	
+}
+
+int Power(int x,int y)
+{
+	int i;
+	int r=1;
+	for(i=0;i<y;i++)
+		r*=x;
+	return r;
+}
