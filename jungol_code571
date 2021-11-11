@@ -1,0 +1,23 @@
+//jungol_code571
+
+#include<stdio.h>
+
+void Something(void)
+{
+	printf("~!@#$^&*()_+|\n");
+}
+
+int main()
+{
+	int n,i=1;
+	
+	scanf("%d",&n);
+	
+	while(i<=n)
+	{
+		Something();
+		i++;
+	}
+	
+	return 0;
+}
