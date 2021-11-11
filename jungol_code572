@@ -1,0 +1,18 @@
+//jungol_code572
+
+#include<stdio.h>
+
+void Pi(void)
+{
+	double a;
+	
+	scanf("%lf",&a);
+	printf("%.2lf",a*a*3.14);
+}
+
+int main(void)
+{
+	Pi();
+	
+	return 0;
+}
