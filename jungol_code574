@@ -1,0 +1,28 @@
+//jungol_code574
+
+int Max(int a,int b, int c);
+
+int main(void)
+{
+	int a,b,c;
+	
+	scanf("%d %d %d",&a,&b,&c);
+	
+	Max(a,b,c);
+	
+	return 0;
+}
+
+int Max(int a,int b, int c)
+{
+	if(a>b&&a>c)
+		printf("%d",a);
+	else if(b>a&&b>c)
+		printf("%d",b);
+	else
+		printf("%d",c);
+	
+	return 1; 
+}
+
+	
