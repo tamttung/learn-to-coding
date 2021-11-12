@@ -1,0 +1,29 @@
+//jungol_code624
+
+#include<stdio.h>
+
+int main()
+{
+	int a,i;
+	scanf("%d",&a);
+	double arr[a];
+	double *pt;
+	double hap=0,avg;
+	pt=arr;
+	
+	for(i=0;i<a;i++){
+		scanf("%lf",arr+i);
+	}
+	
+	for(i=0;i<a;i++){
+		printf("%.2lf ",*(arr+i));
+		hap += *(arr+i);
+	}
+	avg=hap/a;
+	printf("\nhap : %.2lf\n",hap);
+	printf("avg : %.2lf\n",avg);
+	
+	return 0;
+}
+	
+	
