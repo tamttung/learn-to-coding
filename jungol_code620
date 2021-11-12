@@ -1,0 +1,13 @@
+//jungol_code620
+
+int main()
+{
+	int a;
+	int *p=&a;
+	
+	scanf("%d",p);
+	
+	printf("%d...%d\n",*p/10,*p%10);
+	return 0;
+}
+	
