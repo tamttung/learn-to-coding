@@ -1,0 +1,31 @@
+//jungol_code622
+
+#include<stdio.h>
+
+int main()
+{
+	int arr[5];
+	int *p=&arr[5];
+	int i;
+
+		
+	for(i=0;i<5;i++){
+//		scanf("%d",&arr[i]);
+		scanf("%d",arr+i);
+//		scanf("%d",p+i);
+//		scanf("%d",&p[i]);
+	}
+	
+	for(i=0;i<5;i++)
+	{
+		if(i%2==0){
+//			printf("%d ",arr[i]);
+			printf("%d ",*(arr+i));
+//			printf("%d ",*(p+i));
+//			printf("%d ",p[i]);
+		}
+	}
+	
+	return 0;
+}
+
