@@ -1,0 +1,22 @@
+//jungol_code623
+
+#include<stdio.h>
+
+int main()
+{
+	double arr[5];
+	double *p = &arr[5];
+	int i;
+	
+	for(i=0;i<5;i++){
+		scanf("%lf",&arr[i]);
+	}
+	
+	for(i=0;i<5;i++){
+		printf("%.1lf ",arr[i]);
+	}
+	
+	return 0;
+}
+	
+	
