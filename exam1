@@ -1,0 +1,40 @@
+/*
+	Name: 평가 2 
+	Author: 김민석 
+	Date: 15-11-21 10:59
+	Description: 1. 내부 인터페이스의 입출력 데이터 구조 구현  
+*/
+
+#include <stdio.h>
+#define SIZE 10
+
+int main(int argc, char *argv[]) {
+	
+	int arr[SIZE];
+	int i;								//반복을 위한 변수  
+	int count_plus=0,count_minus=0,count_zero=0;
+	
+	
+	printf("Input 10 numbers : ");	
+	for (i=0;i<SIZE;i++){
+		scanf ("%d", &arr[i]);
+	}
+	
+	for (i=0;i<SIZE;i++){
+		if(arr[i]==0){
+			count_zero++; 				// 0의 개수 
+		}
+		else if(arr[i]>0){
+			count_plus++;				// 양수의 개수  
+		} 
+		else{
+			count_minus++;				// 음수의 개수 
+		}
+	}
+	
+	printf("Count [+] : %d\n",count_plus);
+	printf("Count [-] : %d\n",count_minus);
+	printf("Count [0] : %d\n",count_zero);
+	
+	return 0;
+}
