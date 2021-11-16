@@ -1,0 +1,23 @@
+//chapter8_ex7
+
+#include<stdio.h>
+#include<ctype.h>
+#define SIZE 100
+
+int main()
+{
+	char str[SIZE];
+	char *ps=str;
+	int count_space=0,i;
+	
+	gets(ps);
+	
+	for(i=0;i<SIZE;i++){
+		if(isspace(*(ps+i))){
+			count_space++;
+		}
+	}
+	
+	printf("%d",count_space);
+	return 0;
+}
