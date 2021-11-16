@@ -1,0 +1,26 @@
+//chapter8_ex
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+	char str1[256];
+	char str2[256];
+	char *p1=str1,*p2=str2;
+	char temp1,temp2;
+	 
+	printf("첫번째 문자열을 입력하세요 : "); 
+	gets(p1); 
+	printf("두번째 문자열을 입력하세요 : "); 
+	gets(p2);
+			
+	if(!stricmp(p1,p2)){
+		printf("%s와(과) %s는(은) 같다\n",p1,p2);	
+	}
+	else{
+		printf("%s와(과) %s는(은) 다르다\n",p1,p2);
+	}
+	
+	return 0;
+}
