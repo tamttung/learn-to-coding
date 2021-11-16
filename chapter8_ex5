@@ -1,0 +1,29 @@
+//chapter8_ex5
+
+#include<stdio.h>
+#define SIZE 100
+
+int main()
+{
+	int arr[]={15,23,7,78,34,67,45,36,90,71};
+	int *p1=arr;
+	int a;
+	int i;
+	
+	printf("[ 원본 배열 ]  ");
+	
+	for(i=0;i<sizeof(arr)/sizeof(arr[0]);i++){
+		printf(" %d ",*(p1+i));
+	}
+	
+	printf("\n증가량을 입력하세요 : ");
+	scanf("%d",&a);
+	
+	printf("[ 증가후  배열 ]  ");
+	
+	for(i=0;i<sizeof(arr)/sizeof(arr[0]);i++){
+		printf(" %d ",*(p1+i)+a);
+	}
+	
+	return 0;
+}
