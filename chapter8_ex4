@@ -1,0 +1,23 @@
+//chapter8_ex4
+
+#include<stdio.h>
+#define SIZE 100
+
+int main()
+{
+	double arr[SIZE]={10,20,30,40,50};
+	double *pa=arr;
+	int i;
+	double avg,sum=0;
+	
+	for(i=0;i<SIZE;i++){
+		sum += *(pa+i);
+	}
+	
+	avg=sum/5.0;
+	
+	printf("%.lf  %.lf",sum,avg);
+	
+	return 0;
+}
+	
