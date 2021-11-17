@@ -1,0 +1,25 @@
+//chapter9_2
+
+#include<stdio.h>
+
+struct RGB{
+	int red,green,blue;
+};
+
+
+int main()
+{
+	struct RGB RGB1;
+	struct RGB RGB2;
+	
+	printf("RED : ");
+	scanf("%d",&RGB1.red);
+	printf("GREEN : ");
+	scanf("%d",&RGB1.green);
+	printf("BLUE : ");
+	scanf("%d",&RGB1.blue);
+	
+	printf("RGB : %x",(RGB1.red<<16)+(RGB1.green<<8)+RGB1.blue);
+
+	return 0;
+}
