@@ -1,0 +1,25 @@
+//chatper9_ex5
+
+#include<stdio.h>
+
+typedef union color{
+	unsigned char rgb[4];
+	unsigned int dword;
+}COLOR;
+
+int main()
+{
+	COLOR color1;
+	
+	printf("input red color : ");
+	scanf("%d",&color1.rgb[0]);
+	printf("input green color : ");
+	scanf("%d",&color1.rgb[1]);
+	printf("input blue color : ");
+	scanf("%d",&color1.rgb[2]);
+	
+	printf("color.dword = %x\n",color1.dword);
+	
+	return 0;
+}
+	
