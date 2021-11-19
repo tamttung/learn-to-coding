@@ -1,0 +1,52 @@
+//chapter9_ex3
+
+#include<stdio.h>
+#include<math.h>
+
+typedef struct point{
+	int x,y;
+}POINT;
+
+int lon(int , int ,int,int);
+
+int main()
+{
+	POINT line1,line2;
+	int a,b;
+	
+	scanf("%d %d",&line1.x,&line1.y);
+	scanf("%d %d",&line2.x,&line2.y);
+	
+	printf("변경전 직선의 정보 : 시작점 (%d,%d), 끝점(%d,%d)\n",
+			line1.x,line1.y,line2.x,line2.y);
+	printf("변경전 직선의 길이: %d\n",lon(line1.x,line1.y,line2.x,line2.y));	
+			
+	printf("x축으로 이동할 거리를 입력하세요 : ");
+	scanf("%d",&a);		 
+	printf("y축으로 이동할 거리를 입력하세요 : ");
+	scanf("%d",&b);
+	
+	printf("변경 후 직선 정보 : 시작점 (%d,%d), 끝점(%d,%d)\n",
+			line1.x+a,line1.y+b,line2.x+a,line2.y+b);
+	printf("변경 후 직선의 길이: %d\n",lon(line1.x+a,line1.y+b,line2.x+a,line2.y+b));		
+					 
+	return 0;
+}
+
+int lon(int x1, int y1,int x2,int y2){
+	int lon;
+	int a,b;
+	a=x1-x2;
+	b=y1-y2;
+	lon=sqrt(a*a+b*b);
+	return lon;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
