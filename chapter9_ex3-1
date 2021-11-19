@@ -1,0 +1,52 @@
+//chapter9_ex3-1
+
+#include<stdio.h>
+#include<math.h>
+
+typedef struct point{
+	int x,y;
+}POINT;
+
+
+typedef struct line{
+	POINT p1,p2;
+}LINE;
+
+void PrintLine(LINE *pLine);
+
+int main()
+{
+	LINE line={{10,20},{50,60}};
+	int a,b;
+	
+	printf("변경전 직선의 정보 : ");
+	PrintLine(&line);
+	
+	printf("x축으로 이동할 거리를 입력하세요 : ");
+	scanf("%d",&a);		 
+	printf("y축으로 이동할 거리를 입력하세요 : ");
+	scanf("%d",&b);
+	
+	line.p1.x=line.p1.x+a;
+	line.p2.x+=a;
+	line.p1.y=line.p1.y+b;
+	line.p2.y+=b;
+	
+	printf("변경 후 직선 정보 : ");
+	PrintLine(&line);
+		
+	return 0;
+}
+
+
+void PrintLine(LINE *pLine){
+	printf("시작점=(%d,%d),끝점=(%d,%d)\n",\
+			pLine->p1.x,pLine->p1.y,pLine->p2.x,pLine->p2.y);
+		}
+	
+	
+	
+	
+	
+	
+	
