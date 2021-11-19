@@ -1,0 +1,28 @@
+//chapter9_ex2
+
+#include<stdio.h>
+#include<math.h>
+
+struct point{
+	int x,y
+};
+typedef struct point POINT;
+
+int main()
+{
+	POINT line1,line2;
+	int lonX,lonY;
+	int a;
+	
+	scanf("%d %d",&line1.x,&line1.y);
+	scanf("%d %d",&line2.x,&line2.y);
+
+	lonX=line1.x-line2.x;
+	lonY=line1.y-line2.y;
+	
+	a = sqrt(lonX*lonX + lonY*lonY);
+		
+	printf("%d",a);
+	return 0;
+}
+		
