@@ -1,0 +1,31 @@
+//chapter9_ex4
+
+#include<stdio.h>
+#define COUNT 5
+
+typedef struct contact{
+	char name[20];
+	char num[40];
+}contact;
+
+int main()
+{
+	contact con[COUNT];
+	int i;
+	
+	for(i=0;i<COUNT;i++){
+		printf("이 름 : ");
+		scanf("%s",con[i].name);
+		printf("전화번호 : ");
+		scanf("%s",con[i].num);
+	}
+	
+	printf("--- 전체 전화번호 목록 ---\n");
+	
+	for(i=0;i<COUNT;i++){
+		printf("%s  %s\n",con[i].name,con[i].num);
+	}
+	
+	return 0;
+}
+	
