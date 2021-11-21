@@ -1,0 +1,25 @@
+//jungol_code545
+
+#include<stdio.h>
+
+int main() {
+	int a,i=1;
+	int m3=0,m5=0;
+
+	while(i<=10) {
+		i++;
+		scanf("%d",&a);
+
+		if (a%3==0) {
+			m3++;
+		} if (a%5==0) {
+			m5++;
+		}
+	}
+
+	printf("Multiples of 3 : %d\n",m3);
+	printf("Multiples of 5 : %d\n",m5);
+
+	return 0;
+
+}
