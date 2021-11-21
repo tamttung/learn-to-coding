@@ -1,0 +1,18 @@
+//jungol_code541
+
+#include<stdio.h>
+
+int main()
+{
+	int i=1;
+	char ch;
+	
+	scanf("%c",&ch);
+	
+	while (i<=20)
+	{
+		printf("%c",ch);
+		i++;
+	}
+	return 0;	
+}
