@@ -1,0 +1,16 @@
+//jungol_code544
+
+#include<stdio.h>
+
+int main() {
+	int a,i=0;
+
+	scanf("%d",&a);
+
+	for(; a<=100; a++)
+		i+=a;
+
+	printf("%d",i);
+
+	return 0;
+}
