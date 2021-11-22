@@ -1,0 +1,26 @@
+//chapter10_4
+
+#include<stdio.h>
+#include<string.h>
+
+
+typedef struct point{
+	int x, y;
+}POINT;
+
+void PrintPoint(POINT *p);
+
+int main()
+{
+	POINT p1 ={100,200};
+	PrintPoint(&p1);
+	
+	return 0;
+}
+
+
+void PrintPoint(POINT *p)
+{
+	printf("(%d, %d)\n",p->x,p->y);
+}
+
