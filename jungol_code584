@@ -1,0 +1,24 @@
+//jungol_code584
+
+#include<stdio.h>
+#define One 1
+#define Two 2
+#define Three 3
+
+int main()
+{
+	printf("%d + %d = %d\n",One,One,One+One);
+	printf("%d + %d = %d\n",One,Two,One+Two);
+	printf("%d + %d = %d\n",One,Three,One+Three);
+	printf("%d + %d = %d\n",Two,One,Two+One);
+	printf("%d + %d = %d\n",Two,Two,Two+Two);
+	printf("%d + %d = %d\n",Two,Three,Two+Three);
+	printf("%d + %d = %d\n",Three,One,Three+One);
+	printf("%d + %d = %d\n",Three,Two,Three+Two);
+	printf("%d + %d = %d\n",Three,Three,Three+Three);
+	
+	
+	return 0;
+	
+}
+
