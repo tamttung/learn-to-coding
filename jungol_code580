@@ -1,0 +1,99 @@
+//jungol_code580
+
+#include<stdio.h>
+
+void Getdate(int m,int d);
+
+int main()
+{
+	int month,day;
+	scanf("%d %d",&month,&day);
+	
+	Getdate(month,day);
+	
+	return 0;	
+}
+	
+	
+void Getdate(int m,int d)
+{
+	if(m==1||m==3||m==5||m==7||m==8||m==10||m==12){
+		if(d<=31&&d>0){
+			printf("OK!\n");
+		}
+		else{
+			printf("BAD!\n");
+		}
+	}
+	else if(m==4||m==6||m==9||m==11){
+		if(d<=30&&d>0){
+			printf("OK!\n");
+		}
+		else{
+			printf("BAD!\n");
+		}
+	}
+	else if(m==2){
+		if(d<=29&&d>0){
+			printf("OK!\n");
+		}
+		else{
+			printf("BAD!\n");
+		}
+	}
+	else
+		printf("BAD!\n");
+}
+
+
+//
+//{
+//	switch(m)
+//	{
+//		case 1 : case 3 : case 5 : case 7 : case 8 : case 10 : case 12 :
+//			if(d<=31&&d>0){
+//				printf("OK!");
+//			}
+//			else{
+//				printf("BAD!");
+//			}
+//		break;
+//		
+//		case 4 : case 6 : case 9 : case 11 :	
+//			if(d<=30&&d>0){
+//				printf("OK!");
+//			}
+//			else{
+//				printf("BAD!");
+//			}
+//		break;
+//		
+//		case 2 :
+//			if(d<=29&&d>0){
+//				printf("OK!");
+//			}
+//			else{
+//				printf("BAD!");
+//			}
+//		break;
+//		
+//		default :
+//			printf("BAD!");
+//		break;	
+//	}
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
