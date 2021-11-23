@@ -1,0 +1,59 @@
+//jungol_code583
+
+#include<stdio.h>
+#include<math.h>
+
+double MaxNum(double,double,double);
+double MinNum(double,double,double);
+double MidNum(double,double,double);
+
+int main()
+{
+	double a,b,c;
+	scanf("%lf %lf %lf",&a,&b,&c);
+	
+	printf("%.lf ", MaxNum(a,b,c));
+	printf("%.lf ", MinNum(a,b,c));
+	printf("%.lf ", MidNum(a,b,c));
+	
+	return 0;
+}
+
+double MaxNum(double a,double b,double c)
+{
+	double n;
+	if(a>b&&a>c)
+		n=ceil(a);
+	else if(b>c&&b>a)
+		n=ceil(b);
+	else
+		n=ceil(c);
+		
+	return n;	
+}
+
+double MinNum(double a,double b,double c)
+{
+	double n;
+	if(a<b&&a<c)
+		n=floor(a);
+	else if(b<c&&b<a)
+		n=floor(b);
+	else
+		n=floor(c);
+		
+	return n;	
+}
+
+double MidNum(double a,double b,double c)
+{
+	double n;
+	if((a<b&&b<c)||(a>b&&b>c))
+		n=b;
+	else if((a<c&&c<b)||(a>c&&c>b))
+		n=c;
+	else
+		n=a;
+		
+	return n;	
+}
