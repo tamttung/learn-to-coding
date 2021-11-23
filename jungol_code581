@@ -1,0 +1,40 @@
+//jungol_code581
+
+#include<stdio.h>
+#include<math.h>
+
+void Big(double n1,double n2);
+void Small(double n,double n2);
+
+int main()
+{
+	
+	double a,b,c,d;
+	scanf("%lf %lf",&a,&b);
+	scanf("%lf %lf",&c,&d);
+	
+	Big(a,b);
+	Small(c,d);
+	
+	return 0;
+}
+
+void Big(double n1,double n2)
+{
+	if(fabs(n1)>fabs(n2)){
+		printf("%.0lf\n",n1);
+	}
+	else{
+		printf("%.0lf\n",n2);
+	}
+}
+
+void Small(double n1,double n2)
+{
+	if(fabs(n1)<fabs(n2)){
+		printf("%lf\n",n1);
+	}
+	else{
+		printf("%.2lf\n",n2);
+	}
+}
