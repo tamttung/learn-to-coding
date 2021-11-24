@@ -1,0 +1,27 @@
+//chapter10_ex2
+
+#include<stdio.h>
+#include<string.h>
+
+void MakeLower(char s[]);
+
+int main()
+{
+	char str[]="HAPPY Birthday";
+	MakeLower(str);
+	printf("str = %s\n",str);
+	return 0;
+}
+
+void MakeLower(char s[])
+{
+	int i;
+	int len = strlen(s);
+	int diff='a'-'A';
+	
+	for(i=0;i<len;i++)
+	{
+		if(s[i]>='A' && s[i]<='Z')
+			s[i]=s[i]+diff;
+	}	
+}
