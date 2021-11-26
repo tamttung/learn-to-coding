@@ -1,0 +1,33 @@
+/*
+	Name: 김민석 
+	Date: 28-10-21 12:02
+	Description: 시스템SW통합구현 평가 
+				윤년판단 프로그램 만들기  
+*/
+
+
+#include <stdio.h>
+
+
+int main() 
+{
+	int year; //입력받을 변수 
+	int is_leap; //윤년인지 판단할 변수
+	
+	printf("Input year : ");
+	scanf(" %d",&year);
+	
+	is_leap = (year%4==0)&&!(year%100==0)||(year%400==0);
+/*
+	사용 연산자 
+	% : 나머지 연산자 , == : 같다면 ,
+	&& : and연산자 , ! : not 연산자, || : or 연산자 
+	 
+*/
+
+	is_leap?printf("%d is leap year.\n",year):printf("%d is not leap year\n",year);
+	// is_leap가 참(1)이면  ':'앞의 문장을출력하고 
+	//           거짓(0)이면 ':' 뒤으 문장을 출력한다 
+	
+	return 0;
+}
