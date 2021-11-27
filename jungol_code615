@@ -1,0 +1,33 @@
+//jungol_code615
+
+#include<stdio.h>
+#define SIZE 2
+
+typedef struct student {
+	char name[20];
+	int korean,english;
+}STUDENT;
+
+int main()
+{
+	STUDENT s[SIZE];
+	int i,sumK=0,sumE=0;
+	int avgK=0,avgE=0;
+	
+	for(i=0;i<SIZE;i++){
+		scanf("%s %d %d",s[i].name,&s[i].korean,&s[i].english);
+		sumK+=s[i].korean;
+		sumE+=s[i].english;
+	}
+	avgK=sumK/SIZE;
+	avgE=sumE/SIZE;
+	
+	for(i=0;i<SIZE;i++){
+		printf("%s %d %d\n",s[i].name,s[i].korean,s[i].english);
+	}
+	printf("avg %d %d",avgK,avgE);
+	
+	return 0;
+}
+		
+	
