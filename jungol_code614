@@ -1,0 +1,22 @@
+//jungol_code614
+
+#include<stdio.h>
+
+struct school{
+	char name[20];
+	int grade;
+};
+
+int main()
+{
+	struct school s1 = {"Jejuelementary",6};
+	struct school s2;
+	
+	scanf("%s",&s2.name);
+	scanf("%d",&s2.grade);
+	
+	printf("%d grade in %s School\n",s1.grade,s1.name);
+	printf("%d grade in %s School\n",s2.grade,s2.name);
+	
+	return 0;
+}
