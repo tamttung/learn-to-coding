@@ -1,0 +1,37 @@
+//jungol_code617
+
+#include<stdio.h>
+
+typedef struct people{
+	char name[20];
+	int height;
+}PEOPLE;
+
+int main()
+{
+	PEOPLE peo[5],temp;
+	int i,j,index;
+	
+	for(i=0;i<5;i++){
+		scanf("%s %d",peo[i].name,&peo[i].height);
+	}
+	
+	
+	for(i=0;i<5;i++){
+		index=i;
+		for(j=i+1;j<5;j++){
+			if(peo[i].height>peo[j].height)	{
+				temp=peo[j];
+				peo[j]=peo[index];
+				peo[index]=temp;
+			}
+		}
+	}
+
+	printf("%s %d", peo[0].name , peo[0].height );
+	return 0;
+}
+		
+	
+	
+	
