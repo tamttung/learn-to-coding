@@ -1,0 +1,57 @@
+//jungol_code618
+
+#include<stdio.h>
+#include<string.h>
+
+typedef struct people{
+	char name[20];
+	int height;
+	double weight;
+}PEOPLE;
+
+int main()
+{
+	PEOPLE peo[5],temp;
+	int i,j,index;
+	
+	for(i=0;i<5;i++){
+		scanf("%s %d %lf",peo[i].name,&peo[i].height,&peo[i].weight);
+	}
+	
+	for(i=0;i<5;i++){
+		index=i;
+		for(j=i+1;j<5;j++){
+			if(strcmp(peo[i].name,peo[j].name)>0){
+				temp=peo[index];
+				peo[index]=peo[j];
+				peo[j]=temp;
+			}
+		}
+	}
+	
+	printf("name\n");
+	for(i=0;i<5;i++){
+		printf("%s %d %.1lf\n",peo[i].name,peo[i].height,peo[i].weight);
+	}
+	
+	for(i=0;i<5;i++){
+		index=i;
+		for(j=i+1;j<5;j++){
+			if(peo[i].weight<peo[j].weight){
+				temp=peo[index];
+				peo[index]=peo[j];
+				peo[j]=temp;
+			}
+		}
+	}
+	
+	printf("\nweight\n");
+	for(i=0;i<5;i++){
+		printf("%s %d %.1lf\n",peo[i].name,peo[i].height,peo[i].weight);
+	}
+	
+	return 0;
+}
+	
+	
+	
