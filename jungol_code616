@@ -1,0 +1,32 @@
+//jungol_code616
+
+#include<stdio.h>
+
+typedef struct point{
+	int x,y;
+}POINT;
+
+double centroid(int,int,int);
+ 
+int main()
+{
+	POINT p[3];
+	int i;
+	
+	for(i=0;i<3;i++){
+		scanf("%d %d",&p[i].x,&p[i].y);
+	}
+	
+	printf("(%.1lf, %.1lf)",centroid(p[0].x,p[1].x,p[2].x),
+							centroid(p[0].y,p[1].y,p[2].y));	
+	
+	return 0;
+}
+
+
+double centroid(int a,int b,int c){
+	double cen;
+	cen=(a+b+c)/3.0;
+	return cen;
+}
+
