@@ -1,0 +1,40 @@
+
+//arduino Serial mamber2
+
+const int LED_PIN=13;
+String inputString;
+boolean ledOnOff=false;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(LED_PIN,OUTPUT);
+}
+
+void loop() {
+  if(ledOnOff)
+    digitalWrite(LED_PIN,HIGH);
+  else
+    digitalWrite(LED_PIN,LOW);
+}
+
+void serialEvent()
+{
+//  static String inputString="";
+  while(Serial.available()){
+    char inChar = Serial.read();
+    
+    if(inChar=='\n'){
+      if(inputString.equals("on")){
+        ledOnOff=true;
+      }
+      else if (inputString.equals("off")){
+        ledOnOff=false;
+      }
+      else
+         inputString="";
+    }
+    else{
+      inputString+=inChar;
+    }
+  }
+}
