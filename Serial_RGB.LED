@@ -1,0 +1,40 @@
+//arduino Serial_RGB.LED
+
+int redPin=6;
+int greenPin=5;
+int bluePin=3;
+
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(redPin,OUTPUT);
+  pinMode(greenPin,OUTPUT);
+  pinMode(bluePin,OUTPUT);
+
+  digitalWrite(redPin,0);
+  digitalWrite(greenPin,0);
+  digitalWrite(bluePin,0);
+}
+
+void loop() {
+
+  while(Serial.available()>0){
+    int red = Serial.parseInt();
+    int green = Serial.parseInt();
+    int blue = Serial.parseInt();
+
+    if(Serial.read()=='\n'){
+      red = constrain(red,0,255);
+      green = constrain(green,0,255);
+      blue = constrain(blue,0,255);
+
+      analogWrite(redPin,red);
+      analogWrite(greenPin,green);
+      analogWrite(bluePin,blue);
+
+      Serial.print("RED : " + String(red));
+      Serial.print(", GREEN : " + String(green));
+      Serial.println(", BLUE : " + String(blue));
+    }
+  }
+}
