@@ -1,0 +1,18 @@
+//arduino ASCII.Talbe
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("ASCII Talbe");
+  Serial.println("CH\tDEC\tOCT\tHEX\tBIN");
+}
+
+void loop() {
+  for(int i=33;i<=40;i++){
+    Serial.write(i);
+    Serial.print("\t"+String(i,DEC));
+    Serial.print("\t0"+String(i,OCT));
+    Serial.print("\t0x"+String(i,HEX));
+    Serial.print("\tb"+String(i,BIN));
+  }
+  while(true);
+}
