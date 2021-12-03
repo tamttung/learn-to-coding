@@ -1,0 +1,33 @@
+//arduino LED
+
+const int LED1_PIN=3;
+const int LED2_PIN=5;
+const int LED3_PIN=6;
+
+void BlinkLED(int pin ,int duration);
+
+void setup() {
+  digitalWrite(LED1_PIN,HIGH);
+  digitalWrite(LED2_PIN,HIGH);
+  digitalWrite(LED3_PIN,HIGH);
+  
+  pinMode(LED1_PIN,OUTPUT);
+  pinMode(LED2_PIN,OUTPUT);
+  pinMode(LED3_PIN,OUTPUT);
+}
+
+void loop() {
+
+  BlinkLED(LED1_PIN,1000);
+  BlinkLED(LED2_PIN,1000);
+  BlinkLED(LED3_PIN,1000);
+  
+}
+
+void BlinkLED(int pin, int duration)
+{
+  digitalWrite(pin,LOW);
+  delay(duration);
+  digitalWrite(pin,HIGH);
+  delay(duration);
+}
