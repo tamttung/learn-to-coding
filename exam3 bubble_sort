@@ -1,0 +1,38 @@
+//exam3 bubble_sort
+
+#include<stdio.h>
+
+#define SIZE 10
+
+void bubble_sort(int list[],int n){
+  int i, j, temp;
+
+  for(i=n-1; i>0; i--){
+    // 0 ~ (i-1)까지 반복
+    for(j=0; j<i; j++){
+      // j번째와 j+1번째의 요소가 크기 순이 아니면 교환
+      if(list[j]<list[j+1]){
+        temp = list[j];
+        list[j] = list[j+1];
+        list[j+1] = temp;
+      }
+    }
+  }
+}
+
+int main()
+{
+	int i;
+	int list[SIZE];
+	for(i=0; i<SIZE; i++){
+    	scanf("%d",list[i]);
+	}
+	
+	bubble_sort(list,SIZE);
+	
+  	for(i=0; i<SIZE; i++){
+    printf("%d\n", list[i]);
+  }
+}
+	
+	
