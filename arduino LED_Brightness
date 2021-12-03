@@ -1,0 +1,36 @@
+//arduino LED_Brightness
+
+#define STEP_DELAY 100
+#define STEP_FADE_AMOUNT 10
+
+const int LED1_PIN =10;
+const int LED2_PIN =3;
+const int LED3_PIN =5;
+const int LED4_PIN =6;
+
+void setup() {
+}
+
+void loop() {
+
+  static int increment = STEP_FADE_AMOUNT;
+  static int brightness = 0;
+
+  analogWrite(LED1_PIN,brightness);
+  analogWrite(LED2_PIN,brightness);
+  analogWrite(LED3_PIN,brightness);
+  analogWrite(LED4_PIN,brightness);
+
+  brightness += increment;
+
+  if(brightness>255){
+    brightness =255;
+    increment *=-1;
+  }
+  else if(brightness<0){
+    brightness =0;
+    increment*=-1;
+  }
+
+  delay (STEP_DELAY);
+}
