@@ -1,0 +1,45 @@
+//jungol_code577
+
+#include<stdio.h>
+
+int result1(int , int);
+int result2(int , int);
+
+int main()
+{
+	int a,b;
+	int c,d;
+	
+	scanf("%d %d",&a,&b);
+	c= result2(a,b);
+	d= result1(a,b);
+	printf("%d %d",c,d);
+	
+	return 0;
+}
+
+int result1(int a, int b)
+{
+	int x;
+	if(a>=b)
+	{
+		x=(a/2);
+	}
+	else{
+		x=(b/2);
+	}
+	return x;
+}
+
+int result2(int a, int b)
+{
+	int x;
+	if(a>=b)
+	{
+		x=(b*2);
+	}
+	else{
+		x=(a*2);
+	}
+	return x;
+}
