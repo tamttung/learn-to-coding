@@ -1,0 +1,29 @@
+//jungol_code578
+
+#include <stdio.h>
+
+void gugu(int a, int b)
+{
+    if(a > b){
+        int tmp = a;
+        a = b;
+        b = tmp;
+    }
+
+    int i;
+    for(;a <= b;a++){
+        printf("== %ddan ==\n", a);
+        for(i=1;i<=9;i++){
+            printf("%d * %d = %2d\n", a, i, a*i);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int a, b;
+    scanf("%d %d", &a, &b);
+    gugu(a, b);
+}
+
