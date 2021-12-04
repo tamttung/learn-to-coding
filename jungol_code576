@@ -1,0 +1,43 @@
+//jungol_code576
+
+#include<stdio.h>
+
+int result(int,char ,int);
+
+int main()
+{
+	int a,b;
+	char ch;
+	
+	scanf("%d %c %d",&a,&ch,&b);
+	
+	
+	printf("%d %c %d = %d",a,ch,b,result(a,ch,b));
+	
+	return 0;
+	
+}
+
+int result(int a,char ch ,int b)
+{
+	int re;
+	
+	if(ch=='+'){
+		re=a+b;
+	}
+	else if (ch=='-'){
+		re=a-b;
+	}
+	else if(ch =='*'){
+		re=a*b;
+	}
+	else if(ch=='/'){
+		re=a/b;
+	}
+	else{
+		re=0;
+	}
+	
+	return re;
+	
+}
