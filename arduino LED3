@@ -1,0 +1,28 @@
+//arduino LED3
+
+#define R_INDEX 0
+#define G_INDEX 1
+#define B_INDEX 2
+
+const int R_PIN = 3;
+const int G_PIN = 5;
+const int B_PIN = 6;
+const int COLOR_REF[7][3] ={ {255,0,0},{255,50,0},
+                             {255,255,0},{0,255,0},
+                             {0,0,255},{0,5,70},
+                             {100,0,255}};   
+
+void setup() {
+
+}
+
+void loop() {
+  int i;
+
+  for(i=0;i<7;i++){
+    analogWrite(R_PIN, COLOR_REF[i][R_INDEX]);
+    analogWrite(G_PIN, COLOR_REF[i][G_INDEX]);
+    analogWrite(B_PIN, COLOR_REF[i][B_INDEX]);
+    delay(1000);
+  }
+}
