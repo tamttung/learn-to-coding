@@ -1,0 +1,36 @@
+//arduino LED pattern
+
+#define nLED 8
+#define nPATTERN_TYPE 2
+#define nPATTERN_ELEMENT 5
+#define DURATION 100
+
+const int LEDs[nLED]={2,3,4,5,6,7,8,9};
+const int PATTERN[nPATTERN_TYPE][nPATTERN_ELEMENT]={
+                    {0x00,0x18,0x3c,0x7e,0xff},
+                    {0xff,0x7e,0x3c,0x18,0x00}};
+
+void setup() {
+  int i;
+  for(i=0;i<nLED;i++){
+    digitalWrite(LEDs[i],LOW);
+    pinMode(LEDs[i],OUTPUT);
+  }
+}
+
+void loop() {
+
+  int i,j,k;
+
+  for(i=0;i<nPATTERN_TYPE;i++){
+    for(j=0;j<nPATTERN_ELEMENT;j++){
+      for(k=0;k<nLED;k++){
+        if(PATTERN[i][j] & (1<<k))
+          digitalWrite(LEDs[k],HIGH);
+        else
+          digitalWrite(LEDs[k],LOW);
+      }
+      delay(DURATION);
+    }
+  }
+}
