@@ -1,0 +1,29 @@
+//arduino LED4
+
+#define G_BASE 20
+#define G_UPPER 55
+
+const int R_PIN =3;
+const int G_PIN =5;
+const int B_PIN =6;
+
+
+void setup() {
+  pinMode(R_PIN,OUTPUT);
+  pinMode(G_PIN,OUTPUT);
+  pinMode(B_PIN,OUTPUT);
+}
+
+void loop() {
+  int r,g,b,num;
+  num = random(G_BASE,G_UPPER+1);
+
+  r= num * 255/55;
+  g= num;
+  b= 0;
+
+  analogWrite(R_PIN,r);
+  analogWrite(G_PIN,g);
+  analogWrite(B_PIN,b);
+  delay(random(100));
+}
