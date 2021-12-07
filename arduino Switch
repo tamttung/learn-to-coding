@@ -1,0 +1,28 @@
+//arduino Switch
+
+const int SW_PIN =2;
+const int LED_PIN=13;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(SW_PIN,INPUT);
+  pinMode(LED_PIN,OUTPUT);
+}
+
+void loop() {
+  int val;
+  static int valo=1;
+  val=digitalRead(SW_PIN);
+
+  if(val != valo){
+    if(val ==LOW){
+      digitalWrite(LED_PIN,HIGH);
+      Serial.println("Pushed");
+    }
+    else{
+      digitalWrite(LED_PIN,LOW);
+      Serial.println("Released");
+    }
+    valo=val;
+  }
+}
