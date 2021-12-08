@@ -1,0 +1,44 @@
+//arduino Switch_Debouncing
+
+const int LED_PIN = 13;
+const int SW_PIN = 2;
+const int DEBOUNCE_DELAY = 10;
+
+void setup()
+{
+  pinMode(LED_PIN, OUTPUT);
+  pinMode(SW_PIN, INPUT);
+  Serial.begin(9600);  
+}
+
+void loop()
+{
+  static int count = 0;
+  static int currentState = LOW, previousState = LOW;
+  int debounceCurrentState, debouncePreviousState;
+  int i;
+
+  currentState = digitalRead(SW_PIN);
+  if(currentState != previousState) {
+    debouncePreviousState = currentState;
+    for(i=0; i<DEBOUNCE_DELAY; i++) {
+      delay(1);
+      debounceCurrentState = digitalRead(SW_PIN);
+      if(debounceCurrentState != debouncePreviousState) {
+          i = 0;
+          debouncePreviousState = debounceCurrentState;
+      }
+    }
+    
+    previousState = currentState;
+    if(currentState == HIGH) {
+      count++;
+      Serial.println("BTN Count : " + String(count));
+      digitalWrite(LED_PIN, HIGH);  
+     }
+    else {
+      Serial.println("BTN released");
+      digitalWrite(LED_PIN, LOW);  
+    }
+  }
+}
