@@ -10,9 +10,11 @@ void setup() {
 void loop() {
 
   int convertedVal=analogRead(VAR_PIN);
+  double volt = convertedVal*5/1024.0 ;
 
+  Serial.println("---------------------------");
   Serial.println("Digital Val : " + String(convertedVal));
-  Serial.println("Voltage : " + String((convertedVal*5)/1024));
+  Serial.println("Voltage : " + String(volt));
 
   delay(2000);
 }
