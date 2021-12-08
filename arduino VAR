@@ -1,0 +1,18 @@
+//arduino VAR
+
+const int VAR_PIN =A0;
+
+void setup() {
+
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  int convertedVal=analogRead(VAR_PIN);
+
+  Serial.println("Digital Val : " + String(convertedVal));
+  Serial.println("Voltage : " + String((convertedVal*5)/1024));
+
+  delay(2000);
+}
