@@ -1,0 +1,27 @@
+//arduino VAR_LED
+
+void setup() {
+  pinMode(3,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int ADC_val = analogRead(A0);
+  int pwm_val = map(ADC_val,0,1023,0,100);
+
+  if(pwm_val>=50){
+    digitalWrite(3,HIGH);
+  }
+  else{
+    digitalWrite(3,LOW);
+  }  //on&off
+
+
+//  analogWrite(3,pwm_val); 
+//  delay(500); //  ==> LED brightness   
+//  
+//  digitalWrite(3,HIGH);
+//  delay(pwm_val);
+//  digitalWrite(3,LOW);
+//  delay(pwm_val); //==> LED toggle (map(ADC_val,0,1023,10,500))
+}
