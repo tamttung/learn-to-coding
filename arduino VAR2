@@ -1,0 +1,19 @@
+//arduino VAR2
+
+const int VAR_PIN=A0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int convertedVal=analogRead(VAR_PIN);
+  float voltage = (convertedVal*5.0)/1024;
+  int percentage= map(convertedVal,0,1023,0,100);
+
+  Serial.print("ADC val : " + String(convertedVal)+"/ Voltage[V] : ");
+  Serial.print(voltage,2);
+  Serial.println(" / Percentage[%] : " + String(percentage));
+
+  delay(1000);
+}
