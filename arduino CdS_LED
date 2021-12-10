@@ -1,0 +1,29 @@
+//arduino CdS_LED
+
+const int CDS_PIN =A0;
+const int LED_PIN =3;
+
+void setup() {
+  pinMode(LED_PIN,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  int cdsVal= analogRead(CDS_PIN);
+  int newCdsVal= constrain(cdsVal,100,1023);
+
+  newCdsVal= map(newCdsVal,100,1023,0,100);
+
+
+  analogWrite(LED_PIN, newCdsVal); // ==> LED Brightness
+
+//  if(newCdsVal>=50){
+//    digitalWrite(LED_PIN,HIGH);
+//  }
+//  else{
+//    digitalWrite(LED_PIN,LOW);
+//  } ==>on&off
+
+  Serial.println("CdS converted Val(0~100[%]) : " +String(newCdsVal));
+  delay(100);
+}
