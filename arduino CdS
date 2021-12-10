@@ -1,0 +1,17 @@
+//arduino CdS
+
+const int CDS_PIN=A0;
+
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int cdsval = analogRead(CDS_PIN);
+  int newcdsval = constrain(cdsval,200,1023);
+
+  newcdsval=map(newcdsval,200,1023,0,100);
+  
+  Serial.println("CdS converted Val(0~1023) : " +String(newcdsval));
+  delay(1000);
+}
