@@ -1,0 +1,38 @@
+//arduino millis
+
+const int LED_RED=5;
+const int LED_YELLOW=6;
+unsigned long time_previous1,time_current1;
+unsigned long time_previous2,time_current2;
+boolean RED_state,YELLOW_state = false;
+
+
+void setup() {
+  pinMode(LED_RED,OUTPUT);
+  pinMode(LED_YELLOW,OUTPUT);
+  digitalWrite(LED_RED, RED_state);
+  digitalWrite(LED_YELLOW, YELLOW_state);
+  Serial.begin(9600);
+  time_previous1 = millis();
+  time_previous2 = millis();
+}
+
+void loop() {
+  time_current1 = millis();
+  time_current2 = millis();
+  
+  if(time_current1 - time_previous1 >= 1000){
+    digitalWrite(LED_RED,RED_state);
+    Serial.println("RED_ON");
+    time_previous1 =time_current1;
+    RED_state= !RED_state;
+  }
+  
+  if(time_current2 - time_previous2 >= 500){
+    digitalWrite(LED_YELLOW,YELLOW_state);
+    Serial.println("YELLOW_ON");
+    time_previous2 =time_current2;
+    YELLOW_state= !YELLOW_state;
+  }
+  
+}
