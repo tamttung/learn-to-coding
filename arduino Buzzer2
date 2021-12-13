@@ -1,0 +1,52 @@
+//arduino Buzzer2
+
+#include <pitches.h>
+#define BZ_PIN 2
+
+int gMelody[] = {
+  NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_G4, NOTE_G4, NOTE_E4, 0,
+  NOTE_G4, NOTE_G4, NOTE_E4, NOTE_E4, NOTE_D4, 0,
+  NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_G4, NOTE_G4, NOTE_E4, 0,
+  NOTE_G4, NOTE_E4, NOTE_D4, NOTE_E4, NOTE_C4, 0,
+};
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  int i;
+  int noteDuration = 4; 
+  int noteLength;       
+  int pauseBetweenNotes;
+  char ch;
+  static int play = 1;
+
+  if(play == 1){
+    for(i=0; i<sizeof(gMelody)/sizeof(int); i++) {
+      if(Serial.available()) {
+        ch = Serial.read();
+        if(ch == 's') {
+          play = 0;
+          break;  
+        }  
+      }
+      
+      noteLength = 1000 / noteDuration; 
+      tone(BZ_PIN, gMelody[i], noteLength); 
+  
+      pauseBetweenNotes = noteLength * 1.3;
+      delay(pauseBetweenNotes);
+      noTone(BZ_PIN);
+    }
+  }
+  else {
+    if(Serial.available()) {
+      ch = Serial.read();
+      if(ch == 'p')
+        play = 1;  
+    }  
+  }
+}
