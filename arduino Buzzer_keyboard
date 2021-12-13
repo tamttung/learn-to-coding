@@ -1,0 +1,24 @@
+//arduino Buzzer_keyboard
+
+#include<pitches.h>
+
+const int BZ_PIN = 2;
+const int SW_PIN[]={3,4,5,6,7};
+const int NOTES[]={NOTE_C4,NOTE_D4,NOTE_E4,NOTE_F4,NOTE_G4};
+
+void setup() {
+  int i;
+  for(i=0;i<5;i++){
+    pinMode(SW_PIN[i],INPUT_PULLUP);
+  }
+}
+
+void loop() {
+  int i;
+  for(i=0;i<5;i++){
+    if(digitalRead(SW_PIN[i]) == LOW){
+      tone(BZ_PIN, NOTES[i] ,30);
+      }
+  }
+
+}
