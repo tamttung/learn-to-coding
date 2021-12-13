@@ -1,0 +1,33 @@
+//arduino Buzzer
+
+#include<pitches.h>
+#define Bz_pin 2
+
+int gMelody[] = {
+  NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_G4, NOTE_G4, NOTE_E4, 0,
+  NOTE_G4, NOTE_G4, NOTE_E4, NOTE_E4, NOTE_D4, 0,
+  NOTE_G4, NOTE_G4, NOTE_A4, NOTE_A4, NOTE_G4, NOTE_G4, NOTE_E4, 0,
+  NOTE_G4, NOTE_E4, NOTE_D4, NOTE_E4, NOTE_C4, 0,
+};
+
+
+void setup() {
+
+}
+
+void loop() {
+
+ int i;
+  int noteDuration = 4; 
+  int noteLength;       
+  int pauseBetweenNotes;
+  
+  for(i=0; i<sizeof(gMelody)/sizeof(int); i++) {
+    noteLength = 1000 / noteDuration; 
+    pauseBetweenNotes = noteLength * 1.3;
+    tone(Bz_pin, gMelody[i], noteLength);  
+    delay(pauseBetweenNotes);
+    noTone(Bz_pin);
+  }
+    
+}
