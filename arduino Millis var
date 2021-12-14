@@ -1,0 +1,29 @@
+//arduino Millis var
+
+const int LED =2 , VAR=A0;
+
+void setup() {
+  pinMode(LED,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  uint32_t currentMillis;
+  static uint32_t preMillis1 =0;
+  static uint32_t preMillis2 =0;
+  
+  currentMillis = millis();
+
+  if(currentMillis - preMillis1 >=100){
+    digitalWrite(LED,1-digitalRead(LED));
+    preMillis1=currentMillis;
+  }
+  
+  if(currentMillis - preMillis2 >= 500){
+    int val =analogRead(VAR);
+    float vol = val *5.0 /1024;
+    Serial.println(vol);
+    preMillis1=currentMillis;
+  }
+  
+}
