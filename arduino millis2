@@ -1,0 +1,40 @@
+//arduino millis2
+
+#define LED1 2
+#define LED2 3
+#define LED3 4
+
+void setup() {
+  pinMode(LED1,OUTPUT);
+  pinMode(LED2,OUTPUT);
+  pinMode(LED3,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  uint32_t currentMillis;
+  static uint32_t preMillis1=0;
+  static uint32_t preMillis2=0;
+  static uint32_t preMillis3=0;
+
+  currentMillis = millis();
+
+  if(currentMillis - preMillis1 >=500){
+    preMillis1 = currentMillis;
+    digitalWrite(LED1,1-digitalRead(LED1));  
+  }
+
+  if(currentMillis - preMillis2 >=200){
+    preMillis2 = currentMillis;
+    digitalWrite(LED2,1-digitalRead(LED2));  
+  }
+
+  if(currentMillis - preMillis3 >=2000){
+    preMillis3 = currentMillis;
+    digitalWrite(LED3,1-digitalRead(LED3));  
+  }
+
+
+
+  
+}
