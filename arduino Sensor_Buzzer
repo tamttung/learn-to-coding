@@ -5,19 +5,21 @@
 const int TRIG_PIN = A1;
 const int ECHO_PIN = A0;
 const int BZ_PIN=2;
+const int LED_PIN= 13;
 
 void setup() {
   Serial.begin(9600);
   pinMode(TRIG_PIN,OUTPUT);
   pinMode(ECHO_PIN,INPUT);
   pinMode(BZ_PIN,OUTPUT);
+  pinMode(LED_PIN,OUTPUT);
 }
 
 void loop() {
   int distance;
   int Duration;
   uint32_t currentMillis;
-  static uint32_t preMillis1=0 , preMillis2=0;
+  static uint32_t preMillis1=0 , preMillis2=0 ,preMillis3=0;
 
   currentMillis =millis();
 
@@ -33,5 +35,10 @@ void loop() {
   if(currentMillis - preMillis2 >= Duration){
     tone(BZ_PIN,1000,30);
     preMillis2 = currentMillis;
+  }
+
+  if(currentMillis - preMillis3 >= Duration){
+    preMillis3 = currentMillis;
+    digitalWrite(LED_PIN, 1-digitalRead(LED_PIN));
   }
 }
