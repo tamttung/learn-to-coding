@@ -1,0 +1,23 @@
+//arduino sonic_sensor
+
+const int TRIG_PIN = A1;
+const int ECHO_PIN = A0;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(TRIG_PIN,OUTPUT);
+  pinMode(ECHO_PIN,INPUT);
+}
+
+void loop() {
+  double distance;
+  digitalWrite(TRIG_PIN,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN,LOW);
+
+  distance = pulseIn(ECHO_PIN,HIGH)/58.0;
+
+  Serial.println("Distance [cm] : " + String(distance));
+
+  delay(1000);
+}
