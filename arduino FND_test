@@ -1,0 +1,37 @@
+//arduino FND_test
+
+#define nFND_PIN 8
+
+typedef enum _fndSeg{
+   FNDSegA=2, FNDSegB=3, FNDSegC=4, FNDSegD=5, 
+   FNDSegE=7, FNDSegF=6, FNDSegG=8, FNDSegH=9 }FNDSeg_t;
+
+const int FNDSegPin[] ={
+  FNDSegA, FNDSegB, FNDSegC, FNDSegD, 
+  FNDSegE, FNDSegF, FNDSegG, FNDSegH };
+
+
+void setup() {
+  int i;
+  for(i=0;i<nFND_PIN;i++){
+    pinMode(FNDSegPin[i],OUTPUT);
+  }
+
+}
+
+void loop() {
+  int i;
+  static FNDSeg_t FNDCurrentSeg =0;
+
+  for(i=0;i<nFND_PIN;i++){
+    if(FNDCurrentSeg==i){
+      digitalWrite(FNDSegPin[i],HIGH);
+    }
+    else{
+      digitalWrite(FNDSegPin[i],LOW);
+    }
+  }
+  delay(500);
+  FNDCurrentSeg=(FNDCurrentSeg+1) % nFND_PIN;
+}
+
