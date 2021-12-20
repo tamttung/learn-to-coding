@@ -1,0 +1,21 @@
+//arduino Water_sensor
+
+#define Interval_check 500
+const int Water_PIN =A0;
+
+void setup(){
+  Serial.begin(9600);
+}
+
+void loop(){
+  unsigned long currentMillis;
+  static unsigned long preMillis=0;
+  int level;
+
+  currentMillis = millis();
+  if(currentMillis -preMillis >= Interval_check){
+    preMillis=currentMillis;
+    level =analogRead(Water_PIN);
+    Serial.println("Read val (0~1023): " + String(level));
+  }
+}
