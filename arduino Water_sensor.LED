@@ -1,0 +1,40 @@
+//arduino Water_sensor.LED
+
+#define Interval_check 300
+#define On_ThresHold 80
+#define OFF_HIGH (On_ThresHold+5)
+#define ON_LOW (On_ThresHold-5)
+
+const int Water_Pin = A0;
+const int LED_PIN = 13;
+
+void setup(){
+  pinMode(LED_PIN,OUTPUT);
+  Serial.begin(9600);
+  Serial.println("Level, LED.State");
+}
+
+void loop(){
+  unsigned long currentMillis;
+  static unsigned long preMillis =0;
+  int level, ledState=0;
+
+  currentMillis=millis();
+  if(currentMillis-preMillis>=Interval_check){
+    preMillis=currentMillis;
+    level=constrain(analogRead(Water_Pin),350,700);
+    level=map(level,350,700,0,100);
+    if(level<ON_LOW){
+      digitalWrite(LED_PIN,HIGH);
+      ledState=80;
+    }
+    else if(OFF_HIGH<level){
+      digitalWrite(LED_PIN,LOW);
+      ledState=0;
+    }
+    Serial.print(level);
+    Serial.print(",");
+    Serial.println(ledState);
+  }
+}
+
