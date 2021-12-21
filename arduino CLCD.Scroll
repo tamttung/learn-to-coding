@@ -1,0 +1,45 @@
+//arduino CLCD.Scroll
+
+#include <LiquidCrystal.h>
+#define CLCD_INTERVAL_SCROLL 1000
+#define CLCD_nSCROLL 16
+
+typedef enum {STATE_LEFT=0, STATE_RIGHT = !STATE_LEFT}STATE_t;
+
+
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+const int BL_PIN = 13;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+const int numRows = 2;
+const int numCols = 16;
+
+void setup() {
+  lcd.begin(numCols, numRows);
+  lcd.print("0123456789ABCDEF");
+  lcd.setCursor(0,1);
+  lcd.print("!@#$%^&*()123456");
+  pinMode(BL_PIN, OUTPUT);
+  digitalWrite(BL_PIN, HIGH);
+}
+
+void loop() {
+  unsigned long currentMillis;
+  static unsigned long preMillis =0;
+  static STATE_t CLCDScrollState=STATE_LEFT;
+  static int CLCDCountScroll =0;
+
+  currentMillis=millis();
+
+  if(currentMillis-preMillis>=CLCD_INTERVAL_SCROLL){
+    preMillis=currentMillis;
+    if(((++CLCDCountScroll)%CLCD_nSCROLL)==0){
+      CLCDCountScroll=0;
+      CLCDScrollState=(STATE_t)!CLCDScrollState;
+    }
+  if(CLCDScrollState ==STATE_LEFT)
+    lcd.scrollDisplayLeft();
+  else
+    lcd.scrollDisplayRight();
+  }
+}
