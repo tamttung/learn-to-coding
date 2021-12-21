@@ -1,0 +1,34 @@
+//arduino CLCD.Serial
+
+#include <LiquidCrystal.h>
+#define CLCD_INTERVAL_SCROLL 1000
+#define CLCD_nSCROLL 16
+
+typedef enum {STATE_LEFT=0, STATE_RIGHT = !STATE_LEFT}STATE_t;
+
+
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+const int BL_PIN = 13;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+const int numRows = 2;
+const int numCols = 16;
+
+void setup() {
+  Serial.begin(9600);
+  lcd.begin(numCols,numRows);
+  pinMode(BL_PIN, OUTPUT);
+  digitalWrite(BL_PIN, HIGH);
+}
+
+void loop() {
+  if(Serial.available()){
+    delay(100);
+    lcd.clear();
+    lcd.print("From Serial : ");
+    lcd.setCursor(0,1);
+    while(Serial.available()>0){
+      lcd.write(Serial.read());
+    }
+  }
+}
