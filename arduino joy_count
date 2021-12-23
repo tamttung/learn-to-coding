@@ -1,0 +1,64 @@
+//arduino joy_count
+
+#define JOY_INTERVAL_CHECK 1000
+
+const int JOY_X_PIN =A0;
+const int JOY_Y_PIN =A4;
+const int JOY_SW_PIN =2;
+
+void setup() {
+  pinMode(JOY_SW_PIN,INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop() {
+  unsigned long currentMillis;
+  static unsigned long preMillis=0;
+  int JoyReadX,JoyReadY,JoyReadSWcur;
+  static int JoyReadSWprev;
+  String xDir=" ",yDir=" ";
+  static int JoySWcount =0;
+  
+  currentMillis=millis();
+
+  if(currentMillis-preMillis>=JOY_INTERVAL_CHECK){
+    preMillis=currentMillis;
+    JoyReadX=analogRead(JOY_X_PIN);
+    JoyReadY=analogRead(JOY_Y_PIN);
+
+    if(JoyReadX<400){
+      xDir="←";
+    }
+    else if (JoyReadX>600){
+      xDir="→";
+    }
+    else {
+      xDir=" ";
+    }
+
+    
+    if(JoyReadY<400){
+      yDir="↑";
+    }
+    else if (JoyReadY>600){
+      yDir="↓";
+    }
+    else {
+      yDir=" ";
+    }
+
+    JoyReadSWcur=digitalRead(JOY_SW_PIN);
+    if(JoyReadSWcur != JoyReadSWprev){
+      JoyReadSWprev=JoyReadSWcur;
+      if(JoyReadSWcur ==0){
+        JoySWcount++;
+      }
+    }
+    
+
+    
+    Serial.println("X : " + xDir +"\t"+
+                    "Y : " + yDir +"\t"+
+                    "SW : " + String(JoySWcount));
+  }
+}
