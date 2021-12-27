@@ -1,0 +1,32 @@
+// arduino PIR
+
+const int LED_PIN = 13;
+const int PIR_PIN =2;
+int pirstate = LOW;
+int readVal= 0;
+
+void setup()
+{
+	pinMode(LED_PIN,OUTPUT);
+  	pinMode(PIR_PIN,INPUT);
+  	Serial.begin(9600);
+}
+
+void loop()
+{
+  readVal =digitalRead(PIR_PIN);
+  if(readVal == HIGH){
+	digitalWrite(LED_PIN,HIGH);
+    if(pirstate==LOW){
+      Serial.println("Motion detected!");
+      pirstate=HIGH;
+    }
+  }
+  else{
+    digitalWrite(LED_PIN,LOW);
+    if(pirstate==HIGH){
+      Serial.println("Motion ended!");
+      pirstate=LOW;
+    }
+  }
+}
