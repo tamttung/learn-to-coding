@@ -1,0 +1,24 @@
+//arduino Bluetooth
+
+#include <SoftwareSerial.h>
+
+const int HM10_RX = 4;
+const int HM10_TX = 5;
+SoftwareSerial HM10(HM10_RX, HM10_TX);
+
+void setup(void)
+{
+    Serial.begin(9600);
+    HM10.begin(9600);   
+}
+
+void loop(void)
+{
+    if(HM10.available()) {
+        Serial.write(HM10.read());   
+    }
+
+    if(Serial.available()) {
+        HM10.write(Serial.read());    
+    }
+}
